@@ -1,0 +1,94 @@
+.container {
+    background-color: #542437;
+    height: 100vh;
+    .menu {
+        height: 10vh;
+        width: 90vw;
+        background-color: #53777A;
+        margin: 0 auto;
+        a {
+            color: white;
+        }
+    }
+
+    .landing {
+        background-color: #C02942;
+        margin: 50px;
+        height: 80%;
+        .parent {
+            background-color: #ECD078;
+            margin: 2%;
+            height: 60%;
+            padding: 2%;
+            .content {
+                display: inline-block;
+                width: 40%;
+            }
+            .colorState {
+                display: inline-block;
+                width: 40%;
+                margin: 0 5% 5%;
+                color: white;
+                text-align: center;
+            }
+            .stateNotice {
+                display: inline;
+                color: red;
+                background-color: white;
+            }
+            .children {
+                display: flex;
+                height: 100%;
+                .child1 {
+                    background-color: #D95B43;
+                    margin: 0 10%;
+                    height: 40%;
+                    width: 40%;
+                }
+                .child2 {
+                    background-color: #D95B43;
+                    margin: 0 10%;
+                    height: 40%;
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
+
+button {
+    margin-left: 3%;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #53777A;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #333;
+}
+
+button:hover {
+    background-color: rgb(41, 92, 97)
+}
+
+.changeColorBtn:hover {
+    color: red;
+}
+
+button:active {
+    background-color: rgb(41, 92, 97);
+    box-shadow: 0 5px #333;
+    transform: translateY(4px);
+}
+
+code {
+    background-color: white;
+    color: red;
+}
+
+
