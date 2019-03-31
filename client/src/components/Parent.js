@@ -1,27 +1,77 @@
 import React from 'react';
-import Child1 from './Child1';
-import Child2 from './Child2';
+import Child1 from  './Child1';
 
-const Parent = (props) => {
+class Parent extends React.Component {
+  state = { show: false, showComponent: false, color: "#ECD078" };
+
+  onClick = () => {
+    this.setState(prevState => ({
+      show: !prevState.show,
+      showComponent: false
+    }));
+  }
+
+  getNext = () => {
+    this.setState(prevState => ({
+      showComponent: !prevState.showComponent,
+      show: false
+    }));
+  }
+
+  changeColor = () => {
+    if (this.state.color === '#ECD078') {
+      this.setState({ color: 'green'});
+    } else {
+      this.setState({ color: '#ECD078'});
+    }
+  }
+
+  renderParent() {
+    if (this.state.showComponent) {
+      return <Child1 color={this.state.color} />;
+    }
+  }
+
+  renderContent() {
+    if (this.state.show) {
+      return (
+        <div className="wbg">
+          <pre><code>state = {'{ show: true }'};</code></pre>
+          The state can be changed by an event handler (button, link, hover, submit, etc).
+          by clicking the button I am toggling between two states of "show" (true and false). This state is only accessible in the Parent Component.
+          <div className="imageWrapper">
+            <img classname="sourceCode" src="/assets/landingState.png" alt="state code" />
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="wbg">
+          <pre><code>state = {'{ show: false }'};</code></pre>
+        </div>
+      )
+    }
+  }
+
+  render() {
+    const clickComponent = this.state.showComponent ? 'Hide Component' : 'Show Component';
+    const clickColor = this.state.color === "#ECD078" ? 'Yellow State' : 'Green State';
+    const showState = this.state.show ? 'Hide State' : 'Show State';
     return (
-        <div className="parent">
-        <h3>Parent</h3>
-            <div className="content">
-                <p>I can pass state (or any information) down to a nested component. </p>
-                <p>The color state button above will change both component's color. </p>
-                <p>We do this by passing the state as a prop </p>
-                <p><code>{'<Parent color={this.state.color} />;'}</code></p>
-            </div>
-            <div className="colorState" style={{ backgroundColor: props.color }}>
-                <div className="stateNotice">Notice this state doesn't change when we close the component.</div>
-                <h3><pre><code>{'style={{ backgroundColor: props.color }}'}</code></pre>{props.color}</h3>
-            </div>
-        <div className="children">
-            <Child1 />
-            <Child2 />
-        </div>
-        </div>
+      <div className="parent">
+        <h3 className="parentTitle">Parent</h3>
+        <p className="wbg">
+          The App component(purple) is the wrapper for the entire application. The Parent component is nested inside the app Component and is red.
+          The Parent component has a state that can be changed with the "state" button.
+        </p>
+        <button onClick={this.onClick}>{showState}</button>
+        <button onClick={this.getNext}>{clickComponent}</button>
+        <button className="changeColorBtn" style={{ backgroundColor: this.state.color }} onClick={this.changeColor}>{clickColor}</button>
+        <div>{this.renderContent()}</div>
+        {this.renderParent()}
+      </div>
     );
+  }
 }
 
 export default Parent;
