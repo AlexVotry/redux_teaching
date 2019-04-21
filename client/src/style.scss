@@ -25,13 +25,15 @@
             padding: 2%;
             .title {
               display: flex;
-              justify-content: space-around;
+              justify-content: space-between;
             }
             .content {
                 display: flex;
                 .stateNotice {
+                  font-size: 1.5rem;
+                  padding: 1%;
                   display: inline;
-                  background-color: white;
+                  // background-color: white;
                 }
                 .children {
                   margin: 0 10%;
@@ -78,12 +80,14 @@ button:active {
 
 code {
     background-color: white;
+    font-weight: bold;
     color: red;
 }
 
 .wbg {
   margin: 1%;
   background-color: white;
+  font-size: 2rem;
 }
 
 .imageWrapper {

@@ -7,11 +7,11 @@ const Child1 = (props) => {
     <div className="child1" style={{ backgroundColor: props.color }}>
       <div className="title">
         <h3>Child</h3>
-        <h3>{hue}</h3>
+        <h3>{hue.charAt(0).toUpperCase() + hue.slice(1)}</h3>
       </div>
       <div className="content">
         <div className="stateNotice">
-          <p>Notice this state doesn't change when we close the component.</p>
+          <p>The color state doesn't change when we close the component.</p>
           <p>I can pass state (or any information) down to a nested component. </p>
           <p>The color state button above will change both component's color. </p>
           <p>We do this by passing the state as a prop from parent to child</p>

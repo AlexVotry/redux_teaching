@@ -5,14 +5,14 @@ const Header = () => {
     return (
         <div className="menu">
             <Link to="/" className="item">
-                <div class="cssans cssans--center">
-                    <div class="cssans__accessible">CSSans Pro</div>
-                    <div class="cssans__word">
-                        <b class="cssans:R"></b>
-                        <b class="cssans:e"></b>
-                        <b class="cssans:a"></b>
-                        <b class="cssans:c"></b>
-                        <b class="cssans:t"></b>
+                <div className="cssans cssans--center">
+                    <div className="cssans__accessible">CSSans Pro</div>
+                    <div className="cssans__word">
+                        <b className="cssans:R"></b>
+                        <b className="cssans:e"></b>
+                        <b className="cssans:a"></b>
+                        <b className="cssans:c"></b>
+                        <b className="cssans:t"></b>
                     </div>
                 </div>
             </Link>

@@ -40,7 +40,7 @@ class Parent extends React.Component {
           The state can be changed by an event handler (button, link, hover, submit, etc).
           by clicking the button I am toggling between two states of "show" (true and false). This state is only accessible in the Parent Component.
           <div className="imageWrapper">
-            <img classname="sourceCode" src="/assets/landingState.png" alt="state code" />
+            <img classname="sourceCode" src="/assets/ParentState.png" alt="state code" />
           </div>
         </div>
       );
@@ -55,15 +55,15 @@ class Parent extends React.Component {
 
   render() {
     const clickComponent = this.state.showComponent ? 'Hide Component' : 'Show Component';
-    const clickColor = this.state.color === "#ECD078" ? 'Yellow State' : 'Green State';
+    const clickColor = this.state.color === "#ECD078" ? 'Green State' : 'Yellow State';
     const showState = this.state.show ? 'Hide State' : 'Show State';
     return (
       <div className="parent">
         <h3 className="parentTitle">Parent</h3>
-        <p className="wbg">
+        <div className="wbg">
           The App component(purple) is the wrapper for the entire application. The Parent component is nested inside the app Component and is red.
           The Parent component has a state that can be changed with the "state" button.
-        </p>
+        </div>
         <button onClick={this.onClick}>{showState}</button>
         <button onClick={this.getNext}>{clickComponent}</button>
         <button className="changeColorBtn" style={{ backgroundColor: this.state.color }} onClick={this.changeColor}>{clickColor}</button>
