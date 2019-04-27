@@ -26,7 +26,7 @@ class Parent extends React.Component {
     }
   }
 
-  renderParent() {
+  renderChild() {
     if (this.state.showComponent) {
       return <Child1 color={this.state.color} />;
     }
@@ -68,7 +68,7 @@ class Parent extends React.Component {
         <button onClick={this.getNext}>{clickComponent}</button>
         <button className="changeColorBtn" style={{ backgroundColor: this.state.color }} onClick={this.changeColor}>{clickColor}</button>
         <div>{this.renderContent()}</div>
-        {this.renderParent()}
+        {this.renderChild()}
       </div>
     );
   }
